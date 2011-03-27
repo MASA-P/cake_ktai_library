@@ -57,7 +57,6 @@ if($ktai->is_imode()){
 
 //Session.save proccess for CakePHP1.3(implements from 1.3.5)
 //
-$iniSet = function_exists('ini_set');
 switch (Configure::read('Session.save')) {
 	case 'cake':
 		if (empty($_SESSION)) {
