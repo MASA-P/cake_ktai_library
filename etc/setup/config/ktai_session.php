@@ -19,5 +19,5 @@
  * @license			http://www.gnu.org/licenses/gpl.html The GNU General Public Licence
  */
 
-App::import('Lib', 'CakeKtaiLibrary.KtaiSession');
+require(App::pluginPath('CakeKtaiLibrary').'libs'.DS.'ktai_session.php');
 

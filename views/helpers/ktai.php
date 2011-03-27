@@ -23,7 +23,7 @@
  * includes
  */
 if(!class_exists('lib3gk')){
-	App::import('Vendor', 'lib3gk/libs/Lib3gk');
+	App::import('Vendor', 'CakeKtaiLibrary.lib3gk/libs/Lib3gk');
 }
 
 /**
