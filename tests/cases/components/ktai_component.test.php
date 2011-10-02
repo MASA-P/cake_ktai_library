@@ -19,8 +19,8 @@
  * @license			http://www.gnu.org/licenses/gpl.html The GNU General Public Licence
  */
 
-App::import('Vendor', 'ecw/Lib3gkCarrier');
-App::import('Vendor', 'ecw/Lib3gkTools');
+App::import('Vendor', 'CakeKtaiLibrary.lib3gk/libs/Lib3gkCarrier');
+App::import('Vendor', 'CakeKtaiLibrary.lib3gk/libs/Lib3gkTools');
 App::import('Controller', 'KtaiTests');
 
 App::import('Component', 'Ktai');
