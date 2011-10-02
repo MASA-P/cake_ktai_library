@@ -20,9 +20,9 @@
  */
 
 App::import('Vendor', 'CakeKtaiLibrary.lib3gk/libs/Lib3gkCarrier');
-App::import('Controller', 'KtaiTests');
+App::import('Controller', 'CakeKtaiLibrary.KtaiTests');
 
-App::import('Helper', 'Ktai');
+App::import('Helper', 'CakeKtaiLibrary.Ktai');
 
 class KtaiHelperTest extends CakeTestCase {
 	var $controller = null;
