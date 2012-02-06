@@ -32,7 +32,8 @@ if(!class_exists('lib3gk')){
  * @package       KtaiLibrary
  * @subpackage    KtaiLibrary.app.views.helpers
  */
-class KtaiHelper extends Helper {
+App::uses('AppHelper', 'View/Helper');
+class KtaiHelper extends AppHelper {
 	
 	//================================================================
 	//Properties
@@ -75,9 +76,9 @@ class KtaiHelper extends Helper {
 	 * @return (なし)
 	 * @access public
 	 */
-	function beforeRender(){
+	function beforeRender($viewFile){
 		
-		parent::beforeRender();
+		parent::beforeRender($viewFile);
 		
 		$this->options['input_encoding'] = Configure::read('App.encoding');
 		$this->options['output_encoding'] = Configure::read('App.encoding');

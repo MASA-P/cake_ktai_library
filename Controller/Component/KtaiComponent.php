@@ -32,7 +32,7 @@ if(!class_exists('lib3gk')){
  * @package       KtaiLibrary
  * @subpackage    KtaiLibrary.app.controllers.components
  */
-class KtaiComponent extends Object {
+class KtaiComponent extends Component {
 	
 	//================================================================
 	//Properties
@@ -102,12 +102,28 @@ class KtaiComponent extends Object {
 			$this->_lib3gk->_params = array_merge($this->_lib3gk->_params, $controller->ktai);
 			$controller->ktai = &$this->_lib3gk->_params;
 		}
-		$this->_options = &$this->_lib3gk->_params;
-		
 		if($this->_options['enable_ktai_session']){
-			$this->_options['session_save'] = Configure::read('Session.save');
-			Configure::write('Session.save', 'ktai_session');
+			$this->_options['session_save'] = Configure::read('Session');
+
+			$params = array(
+				'defaults' => Configure::read('Session.defaults'),
+				'checkAgent' => false,
+			);
+			if($this->_lib3gk->is_imode()){
+				$params['cookie'] = $this->_lib3gk->_params['imode_session_name'];
+				$params['ini'] = array(
+					'session.use_trans_sid' => 1,
+					'session.use_only_cookies' => 0,
+					'url_rewriter.tags' => 'a=href,area=href,frame=src,input=src,form=fakeentry,fieldset=',
+				);
+
+				if(Configure::read('Security.level') == 'high'){
+					Configure::write('Security.level', 'medium');
+				}
+			}
+			Configure::write('Session', $params);
 		}
+
 	}
 	
 	
@@ -141,7 +157,7 @@ class KtaiComponent extends Object {
 		//requestAction()からのコールの場合は以下処理をスキップする
 		//
 		if (!isset($controller->params['requested']) || $controller->params['requested'] !== 1) {
-			$out = $controller->output;
+			$out = $controller->response->body();
 			
 			$input_encoding  = $this->_options['input_encoding'];
 			$output_encoding = $this->_options['output_encoding'];
@@ -167,7 +183,7 @@ class KtaiComponent extends Object {
 				}
 			}
 			
-			$controller->output = $out;
+			$controller->response->body($out);
 		}
 	
 		$this->_lib3gk->shutdown();
