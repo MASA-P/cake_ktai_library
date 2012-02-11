@@ -1,21 +1,21 @@
 <?php
 /**
- * Ktai library, supports Japanese mobile phone sites coding.
+ * Lib3gk, supports Japanese mobile phone sites coding.
  * It provides many functions such as a carrier check to use Referer or E-mail, 
  * conversion of an Emoji, and more.
  *
  * PHP versions 5
  *
- * Ktai Library for CakePHP
- * Copyright 2009-2011, ECWorks.
+ * Lib3gk
+ * Copyright 2009-2012, ECWorks.
  
  * Licensed under The GNU General Public Licence
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright		Copyright 2009-2011, ECWorks.
+ * @copyright		Copyright 2009-2012, ECWorks.
  * @link			http://www.ecworks.jp/ ECWorks.
- * @version			0.5.0
- * @lastmodified	$Date: 2011-04-10 03:00:00 +0900 (Sun, 10 Apl 2011) $
+ * @version			0.5.1
+ * @lastmodified	$Date: 2012-02-12 06:00:00 +0900 (Sat, 12 Feb 2012) $
  * @license			http://www.gnu.org/licenses/gpl.html The GNU General Public Licence
  */
 
@@ -61,6 +61,104 @@ class Lib3gkMachine {
 		//docomo
 		//
 		'DoCoMo' => array(
+			'SH05D' => array(
+				'text_size'   => array(24, 16), 
+				'screen_size' => array(240, 328), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'SH03D' => array(
+				'text_size'   => array(24, 16), 
+				'screen_size' => array(240, 328), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'P03D' => array(
+				'text_size'   => array(24, 16), 
+				'screen_size' => array(240, 325), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'N03D' => array(
+				'text_size'   => array(24, 16), 
+				'screen_size' => array(240, 325), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'N02D' => array(
+				'text_size'   => array(24, 16), 
+				'screen_size' => array(240, 325), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'F06D' => array(
+				'text_size'   => array(24, 14), 
+				'screen_size' => array(240, 328), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'F04D' => array(
+				'text_size'   => array(24, 14), 
+				'screen_size' => array(240, 328), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'F02D' => array(
+				'text_size'   => array(24, 14), 
+				'screen_size' => array(240, 328), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'P06C' => array(
+				'text_size'   => array(24, 16), 
+				'screen_size' => array(240, 325), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'P05C' => array(
+				'text_size'   => array(24, 16), 
+				'screen_size' => array(240, 325), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'P04C' => array(
+				'text_size'   => array(24, 16), 
+				'screen_size' => array(240, 325), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'P03C' => array(
+				'text_size'   => array(24, 16), 
+				'screen_size' => array(240, 325), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'F10C' => array(
+				'text_size'   => array(24, 14), 
+				'screen_size' => array(240, 328), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
+			'F09C' => array(
+				'text_size'   => array(24, 14), 
+				'screen_size' => array(240, 328), 
+				'image_size'  => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => false, ), 
+				'font_size' => array('reso' => 'high'), 
+			), 
 			'F03C' => array(
 				'text_size'   => array(24, 14), 
 				'screen_size' => array(240, 328), 
@@ -1604,6 +1702,36 @@ class Lib3gkMachine {
 		//Softbank(/Vodaphone/Disney Mobile)
 		//
 		'SoftBank' => array(
+			'008SH' => array(
+				'text_size' => array(20, 14), 
+				'screen_size' => array(240, 338), 
+				'image_size' => array(240, 400), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => true, ), 
+			), 
+			'002Pe' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(236, 369), 
+				'image_size' => array(240, 427), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => true, ), 
+			), 
+			'002P' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(236, 369), 
+				'image_size' => array(240, 427), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => true, ), 
+			), 
+			'001P' => array(
+				'text_size' => array(29, 21), 
+				'screen_size' => array(471, 700), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => true, ), 
+			), 
+			'004SH' => array(
+				'text_size' => array(30, 23), 
+				'screen_size' => array(480, 738), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => true, 'jpg' => true, 'png' => true, ), 
+			), 
 			'002SH' => array(
 				'text_size' => array(30, 23), 
 				'screen_size' => array(480, 738), 
@@ -2654,6 +2782,102 @@ class Lib3gkMachine {
 		//AU(KDDI)
 		//
 		'KDDI' => array(
+			'FJ31' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(233, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'SN3V' => array(
+				'text_size' => array(19, 13), 
+				'screen_size' => array(233, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'TS3Z' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(233, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'KC46' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(233, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'SN3U' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(233, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'TS3Y' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(233, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'CA3K' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(232, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'KC45' => array(
+				'text_size' => array(14, 10), 
+				'screen_size' => array(232, 325), 
+				'image_size' => array(240, 400), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'SN3T' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(233, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'PT36' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(230, 324), 
+				'image_size' => array(240, 400), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'TS3X' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(233, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'KC42' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(233, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'SH3L' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(234, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'SN3S' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(233, 358), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'KC43' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(232, 325), 
+				'image_size' => array(240, 400), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
+			'CA3J' => array(
+				'text_size' => array(23, 16), 
+				'screen_size' => array(232, 336), 
+				'image_size' => array(480, 854), 
+				'pic_format'  => array('gif' => false, 'jpg' => false, 'png' => false, ), 
+			), 
 			'CA3I' => array(
 				'text_size' => array(23, 16), 
 				'screen_size' => array(232, 336), 

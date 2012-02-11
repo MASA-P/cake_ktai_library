@@ -1,21 +1,21 @@
 <?php
 /**
- * Ktai library, supports Japanese mobile phone sites coding.
+ * Lib3gk, supports Japanese mobile phone sites coding.
  * It provides many functions such as a carrier check to use Referer or E-mail, 
  * conversion of an Emoji, and more.
  *
  * PHP versions 5
  *
- * Ktai Library for CakePHP
- * Copyright 2009-2011, ECWorks.
+ * Lib3gk
+ * Copyright 2009-2012, ECWorks.
  
  * Licensed under The GNU General Public Licence
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright		Copyright 2009-2011, ECWorks.
+ * @copyright		Copyright 2009-2012, ECWorks.
  * @link			http://www.ecworks.jp/ ECWorks.
- * @version			0.5.0
- * @lastmodified	$Date: 2011-04-10 03:00:00 +0900 (Sun, 10 Apl 2011) $
+ * @version			0.5.1
+ * @lastmodified	$Date: 2012-02-12 06:00:00 +0900 (Sat, 12 Feb 2012) $
  * @license			http://www.gnu.org/licenses/gpl.html The GNU General Public Licence
  */
  
@@ -71,7 +71,7 @@ class Lib3gkEmojiTest extends PHPUnit_Framework_TestCase {
 		$str = $this->Lib3gkEmoji->emoji(0xf89f, false);
 		$this->assertEquals($str, mb_convert_encoding('[晴]', 'SJIS', 'UTF-8'));
 		
-		$carrier->_carrier = KTAI_CARRIER_UNKNOWN;
+		$carrier->get_carrier(LIB3GK_TEST_USER_AGENT_PC, true);
 		$this->Lib3gkEmoji->_params['use_img_emoji'] = true;
 		$str = $this->Lib3gkEmoji->emoji(0xf89f, false);
 		$this->assertEquals($str, '<img src="./img/emoticons/sun.gif" border="0" width="16" height="16">');
@@ -82,7 +82,7 @@ class Lib3gkEmojiTest extends PHPUnit_Framework_TestCase {
 		
 		//mobile emoji process test
 		//
-		$carrier->_carrier = KTAI_CARRIER_DOCOMO;
+		$carrier->get_carrier(LIB3GK_TEST_USER_AGENT_DOCOMO, true);
 		$this->Lib3gkEmoji->_params['input_encoding']  = KTAI_ENCODING_SJISWIN;
 		$this->Lib3gkEmoji->_params['output_encoding'] = KTAI_ENCODING_SJISWIN;
 		$str = $this->Lib3gkEmoji->emoji(0xf89f, false);
@@ -98,7 +98,7 @@ class Lib3gkEmojiTest extends PHPUnit_Framework_TestCase {
 		$str = $this->Lib3gkEmoji->emoji(0xe63e, false);
 		$this->assertEquals($str, $tools->int2utf8(0xe63e));
 		
-		$carrier->_carrier = KTAI_CARRIER_KDDI;
+		$carrier->get_carrier(LIB3GK_TEST_USER_AGENT_KDDI, true);
 		$this->Lib3gkEmoji->_params['input_encoding']  = KTAI_ENCODING_SJISWIN;
 		$this->Lib3gkEmoji->_params['output_encoding'] = KTAI_ENCODING_SJISWIN;
 		$str = $this->Lib3gkEmoji->emoji(0xf89f, false);
@@ -114,7 +114,7 @@ class Lib3gkEmojiTest extends PHPUnit_Framework_TestCase {
 		$str = $this->Lib3gkEmoji->emoji(0xe63e, false);
 		$this->assertEquals($str, $tools->int2utf8(0xef60));
 		
-		$carrier->_carrier = KTAI_CARRIER_SOFTBANK;
+		$carrier->get_carrier(LIB3GK_TEST_USER_AGENT_SOFTBANK, true);
 		$this->Lib3gkEmoji->_params['input_encoding']  = KTAI_ENCODING_SJISWIN;
 		$this->Lib3gkEmoji->_params['output_encoding'] = KTAI_ENCODING_SJISWIN;
 		$str = $this->Lib3gkEmoji->emoji(0xf89f, false);
@@ -130,7 +130,7 @@ class Lib3gkEmojiTest extends PHPUnit_Framework_TestCase {
 		$str = $this->Lib3gkEmoji->emoji(0xe63e, false);
 		$this->assertEquals($str, '$Gj');
 		
-		$carrier->_carrier = KTAI_CARRIER_EMOBILE;
+		$carrier->get_carrier(LIB3GK_TEST_USER_AGENT_EMOBILE, true);
 		$this->Lib3gkEmoji->_params['input_encoding']  = KTAI_ENCODING_SJISWIN;
 		$this->Lib3gkEmoji->_params['output_encoding'] = KTAI_ENCODING_SJISWIN;
 		$str = $this->Lib3gkEmoji->emoji(0xf89f, false);
@@ -148,7 +148,7 @@ class Lib3gkEmojiTest extends PHPUnit_Framework_TestCase {
 		
 		//Numeric caracter reference process test
 		//
-		$carrier->_carrier = KTAI_CARRIER_DOCOMO;
+		$carrier->get_carrier(LIB3GK_TEST_USER_AGENT_DOCOMO, true);
 		$this->Lib3gkEmoji->_params['input_encoding']  = KTAI_ENCODING_SJISWIN;
 		$this->Lib3gkEmoji->_params['output_encoding'] = KTAI_ENCODING_SJISWIN;
 		$str = $this->Lib3gkEmoji->emoji(0xf89f, false, null, null, false);
@@ -156,6 +156,10 @@ class Lib3gkEmojiTest extends PHPUnit_Framework_TestCase {
 		$this->Lib3gkEmoji->_params['output_encoding'] = KTAI_ENCODING_UTF8;
 		$str = $this->Lib3gkEmoji->emoji(0xf89f, false, null, null, false);
 		$this->assertEquals($str, '&#xe63e;');
+		
+		//Reset carrier
+		//
+		$carrier->get_carrier(LIB3GK_TEST_USER_AGENT_PC, true);
 		
 	}
 	

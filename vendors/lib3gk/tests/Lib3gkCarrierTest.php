@@ -1,21 +1,21 @@
 <?php
 /**
- * Ktai library, supports Japanese mobile phone sites coding.
+ * Lib3gk, supports Japanese mobile phone sites coding.
  * It provides many functions such as a carrier check to use Referer or E-mail, 
  * conversion of an Emoji, and more.
  *
  * PHP versions 5
  *
- * Ktai Library for CakePHP
- * Copyright 2009-2011, ECWorks.
+ * Lib3gk
+ * Copyright 2009-2012, ECWorks.
  
  * Licensed under The GNU General Public Licence
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright		Copyright 2009-2011, ECWorks.
+ * @copyright		Copyright 2009-2012, ECWorks.
  * @link			http://www.ecworks.jp/ ECWorks.
- * @version			0.5.0
- * @lastmodified	$Date: 2011-04-10 03:00:00 +0900 (Sun, 10 Apl 2011) $
+ * @version			0.5.1
+ * @lastmodified	$Date: 2012-02-12 06:00:00 +0900 (Sat, 12 Feb 2012) $
  * @license			http://www.gnu.org/licenses/gpl.html The GNU General Public Licence
  */
  
@@ -53,7 +53,7 @@ class Lib3gkCarrierTest extends PHPUnit_Framework_TestCase {
 		$arr = $this->Lib3gkCarrier->analyze_user_agent($user_agent);
 		$this->assertEquals($arr['carrier'], KTAI_CARRIER_DOCOMO);
 		
-		$user_agent = 'DoCoMo/2.0 P906i(c100;TB;W24H15)';
+		$user_agent = LIB3GK_TEST_USER_AGENT_DOCOMO;
 		$arr = $this->Lib3gkCarrier->analyze_user_agent($user_agent);
 		$this->assertEquals($arr['carrier'], KTAI_CARRIER_DOCOMO);
 		$this->assertEquals($arr['machine_name'], 'P906i');
@@ -64,27 +64,27 @@ class Lib3gkCarrierTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals($arr['carrier'], KTAI_CARRIER_DOCOMO);
 		$this->assertEquals($arr['machine_name'], 'SO902iWP+');
 		
-		$user_agent = 'HTTP_USER_AGENT=KDDI-SA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0';
+		$user_agent = LIB3GK_TEST_USER_AGENT_KDDI;
 		$arr = $this->Lib3gkCarrier->analyze_user_agent($user_agent);
 		$this->assertEquals($arr['carrier'], KTAI_CARRIER_KDDI);
 		
-		$user_agent = 'SoftBank/1.0/840SH/SHJ001/0123456789 Browser/NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+		$user_agent = LIB3GK_TEST_USER_AGENT_SOFTBANK;
 		$arr = $this->Lib3gkCarrier->analyze_user_agent($user_agent);
 		$this->assertEquals($arr['carrier'], KTAI_CARRIER_SOFTBANK);
 		
-		$user_agent = 'emobile/1.0.0 (H11T; like Gecko; Wireless) NetFront/3.4';
+		$user_agent = LIB3GK_TEST_USER_AGENT_EMOBILE;
 		$arr = $this->Lib3gkCarrier->analyze_user_agent($user_agent);
 		$this->assertEquals($arr['carrier'], KTAI_CARRIER_EMOBILE);
 		
-		$user_agent = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 2_0 like Mac OS X; ja-jp) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5A345 Safari/525.20';
+		$user_agent = LIB3GK_TEST_USER_AGENT_IPHONE;
 		$arr = $this->Lib3gkCarrier->analyze_user_agent($user_agent);
 		$this->assertEquals($arr['carrier'], KTAI_CARRIER_IPHONE);
 		
-		$user_agent = 'Mozilla/3.0(WILLCOM;JRC/WX310J/2;1/1/C128) NetFront/3.3';
+		$user_agent = LIB3GK_TEST_USER_AGENT_PHS;
 		$arr = $this->Lib3gkCarrier->analyze_user_agent($user_agent);
 		$this->assertEquals($arr['carrier'], KTAI_CARRIER_PHS);
 		
-		$user_agent = 'Mozilla/5.0 (Linux; U; Android 1.6; ja-jp; SonyEricssonSO-01B Build/R1EA018) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1';
+		$user_agent = LIB3GK_TEST_USER_AGENT_ANDROID;
 		$arr = $this->Lib3gkCarrier->analyze_user_agent($user_agent);
 		$this->assertEquals($arr['carrier'], KTAI_CARRIER_ANDROID);
 		
@@ -100,27 +100,27 @@ class Lib3gkCarrierTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals($test_value, KTAI_CARRIER_UNKNOWN);
 		$this->assertTrue($this->Lib3gkCarrier->_carrier == KTAI_CARRIER_UNKNOWN && $this->Lib3gkCarrier->_carrier_name == 'others' && $this->Lib3gkCarrier->_machine_name == 'default');
 		
-		$user_agent = 'DoCoMo/2.0 P906i(c100;TB;W24H15)';
+		$user_agent = LIB3GK_TEST_USER_AGENT_DOCOMO;
 		$test_value = $this->Lib3gkCarrier->get_carrier($user_agent);
 		$this->assertEquals($test_value, KTAI_CARRIER_DOCOMO);
 		
-		$user_agent = 'HTTP_USER_AGENT=KDDI-SA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0';
+		$user_agent = LIB3GK_TEST_USER_AGENT_KDDI;
 		$test_value = $this->Lib3gkCarrier->get_carrier($user_agent);
 		$this->assertEquals($test_value, KTAI_CARRIER_KDDI);
 		
-		$user_agent = 'SoftBank/1.0/840SH/SHJ001/0123456789 Browser/NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+		$user_agent = LIB3GK_TEST_USER_AGENT_SOFTBANK;
 		$test_value = $this->Lib3gkCarrier->get_carrier($user_agent);
 		$this->assertEquals($test_value, KTAI_CARRIER_SOFTBANK);
 		
-		$user_agent = 'emobile/1.0.0 (H11T; like Gecko; Wireless) NetFront/3.4';
+		$user_agent = LIB3GK_TEST_USER_AGENT_EMOBILE;
 		$test_value = $this->Lib3gkCarrier->get_carrier($user_agent);
 		$this->assertEquals($test_value, KTAI_CARRIER_EMOBILE);
 		
-		$user_agent = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 2_0 like Mac OS X; ja-jp) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5A345 Safari/525.20';
+		$user_agent = LIB3GK_TEST_USER_AGENT_IPHONE;
 		$test_value = $this->Lib3gkCarrier->get_carrier($user_agent);
 		$this->assertEquals($test_value, KTAI_CARRIER_IPHONE);
 		
-		$user_agent = 'Mozilla/3.0(WILLCOM;JRC/WX310J/2;1/1/C128) NetFront/3.3';
+		$user_agent = LIB3GK_TEST_USER_AGENT_PHS;;
 		$test_value = $this->Lib3gkCarrier->get_carrier($user_agent);
 		$this->assertEquals($test_value, KTAI_CARRIER_PHS);
 		
@@ -131,7 +131,7 @@ class Lib3gkCarrierTest extends PHPUnit_Framework_TestCase {
 		$test_value = $this->Lib3gkCarrier->get_carrier(null, true);
 		$this->assertEquals($test_value, KTAI_CARRIER_UNKNOWN);
 		
-		$user_agent = 'Mozilla/5.0 (Linux; U; Android 1.6; ja-jp; SonyEricssonSO-01B Build/R1EA018) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1';
+		$user_agent = LIB3GK_TEST_USER_AGENT_ANDROID;
 		$test_value = $this->Lib3gkCarrier->get_carrier($user_agent);
 		$this->assertEquals($test_value, KTAI_CARRIER_ANDROID);
 		
