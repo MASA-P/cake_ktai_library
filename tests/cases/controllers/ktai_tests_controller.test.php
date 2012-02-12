@@ -19,8 +19,13 @@
  * @license			http://www.gnu.org/licenses/gpl.html The GNU General Public Licence
  */
 
+App::build(array(
+	'controllers' => array(App::pluginPath('CakeKtaiLibrary').'tests'.DS.'test_app'.DS.'controllers'.DS), 
+	'views' => array(App::pluginPath('CakeKtaiLibrary').'tests'.DS.'test_app'.DS.'views'.DS), 
+));
+
 App::import('Vendor', 'CakeKtaiLibrary.lib3gk/libs/Lib3gkCarrier');
-App::import('Controller', 'CakeKtaiLibrary.KtaiTests');
+App::import('Controller', 'KtaiTests');
 
 class TestKtaiTestsController extends CakeTestCase {
 	

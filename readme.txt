@@ -101,12 +101,23 @@ git checkout -b 0.x-2.x
    |  |  +- ktai.php					[644] 携帯コンポーネント
    +- tests								[755] 
    |  +- cases							[755] 
-   |     +- components					[755] 
-   |     |  +- ktai_component.test.php	[***] 携帯コンポーネントのテストケース
-   |     +- controllers					[755] 
-   |     |  +- ktai_controller.test.php	[***] 携帯コントローラのテストケース
-   |     +- helpers						[755] 
-   |        +- ktai_helper.test.php		[***] 携帯ヘルパーのテストケース
+   |  |  +- components					[755] 
+   |  |  +- ktai_component.test.php		[644] 携帯コンポーネントのテストケース
+   |  |  +- controllers					[755] 
+   |  |  |  +- ktai_controller.test.php	[644] 携帯コントローラのテストケース
+   |  |  +- helpers						[755] 
+   |  |     +- ktai_helper.test.php		[644] 携帯ヘルパーのテストケース
+   |  +- groups							[755] 
+   |  |  +- cake.group.php				[644] グループテスト用ファイル
+   |  +- test_app						[755] テスト用appフォルダ
+   |  |  +- controllers					[755] 
+   |  |  |  +- ktai_tests_controller.php[644] テスト用コントローラ
+   |  |  |  +- ktai_app_controller.php	[644] 携帯用Appコントローラ
+   |  |  +- views						[755] 
+   |  |  |   +- layouts					[755] 
+   |  |  |   |  +- ktai_test.ctp		[644] テスト用レイアウト
+   |  |  |   +- ktai_tests				[755] 
+   |  |  |   |  +- autoconv.ctp			[644] テスト用ビューテンプレート
    +- views								[755] 
    |  +- helpers						[755] 
    |     +- ktai.php					[644] 携帯ヘルパー
@@ -116,30 +127,30 @@ git checkout -b 0.x-2.x
    |        +- empty					[***] (ダミー・アップロード不要です)
    +- ktai_app_controller.php			[644] 携帯用app_controller.php(*)
    +- app_error.php						[644] 携帯用app_error.php
-   +- vendors								[755] 
+   +- vendors							[755] 
    |  +- lib3gk							[755] Ktai Libraryコアライブラリ
-   |     +- libs							[755] ライブラリ本体
-   |     |  +- lib3gk.php					[644] lib3gk本体
-   |     |  +- lib3gk_carrier.php			[644] lib3gk(キャリア判定関連)
-   |     |  +- lib3gk_def.php				[644] lib3gk(定義関連)
+   |     +- libs						[755] ライブラリ本体
+   |     |  +- lib3gk.php				[644] lib3gk本体
+   |     |  +- lib3gk_carrier.php		[644] lib3gk(キャリア判定関連)
+   |     |  +- lib3gk_def.php			[644] lib3gk(定義関連)
    |     |  +- lib3gk_emoji.php			[644] lib3gk(絵文字関連)
-   |     |  +- lib3gk_html.php				[644] lib3gk(HTML関連)
-   |     |  +- lib3gk_ip.php				[644] lib3gk(IPアドレス関連)
-   |     |  +- lib3gk_machine.php			[644] lib3gk(機種情報関連)
+   |     |  +- lib3gk_html.php			[644] lib3gk(HTML関連)
+   |     |  +- lib3gk_ip.php			[644] lib3gk(IPアドレス関連)
+   |     |  +- lib3gk_machine.php		[644] lib3gk(機種情報関連)
    |     |  +- lib3gk_tools.php			[644] lib3gk(その他ツール関連)
-   |     +- tests							[755] テストケース(PHPUnit)
+   |     +- tests						[755] テストケース(PHPUnit)
    |        +- includes					[755] 
-   |        |  +- settings.php				[644] テスト用の設定ファイル
-   |        +- Lib3gkCarrierTest.php		[644] lib3gkテスト(キャリア判定関連)
-   |        +- Lib3gkEmojiTest.php			[644] lib3gkテスト(絵文字関連)
-   |        +- Lib3gkHtmlTest.php			[644] lib3gkテスト(HTML関連)
+   |        |  +- settings.php			[644] テスト用の設定ファイル
+   |        +- Lib3gkCarrierTest.php	[644] lib3gkテスト(キャリア判定関連)
+   |        +- Lib3gkEmojiTest.php		[644] lib3gkテスト(絵文字関連)
+   |        +- Lib3gkHtmlTest.php		[644] lib3gkテスト(HTML関連)
    |        +- Lib3gkIpTest.php			[644] lib3gkテスト(IPアドレス関連)
-   |        +- Lib3gkMachineTest.php		[644] lib3gkテスト(機種情報関連)
-   |        +- Lib3gkTest.php				[644] lib3gkテスト(本体)
-   |        +- Lib3gkToolsTest.php			[644] lib3gkテスト(その他ツール関連)
-   |										↓↓↓以下はアップロード不要です
-   +- readme.txt							[***] このファイル
-   +- LICENSE								[***] GNUライセンス規約書
+   |        +- Lib3gkMachineTest.php	[644] lib3gkテスト(機種情報関連)
+   |        +- Lib3gkTest.php			[644] lib3gkテスト(本体)
+   |        +- Lib3gkToolsTest.php		[644] lib3gkテスト(その他ツール関連)
+   |									↓↓↓以下はアップロード不要です
+   +- readme.txt						[***] このファイル
+   +- LICENSE							[***] GNUライセンス規約書
 
 【CakePHP2.x向けCakeKtaiLibraryのディレクトリ構成】
 +- CakeKtaiLibrary						[755] 
@@ -148,15 +159,6 @@ git checkout -b 0.x-2.x
 |  |  |  +- KtaiComponent.php			[644] 携帯コンポーネント
 |  |  +- KtaiAppController.php			[644] 携帯用AppController.php(*)
 |  |  +- CakeErrorController.php		[644] 携帯用CakeErrorController.php
-|  +- Test								[755] 
-|  |  +- Case							[755] 
-|  |     +- Controller					[755] 
-|  |     |  +- Component				[755] 
-|  |     |  |  +- ktai_component.test.php	[***] 携帯コンポーネントのテストケース
-|  |     |  +- ktai_controller.test.php	[***] 携帯コントローラのテストケース
-|  |     +- View						[755] 
-|  |        +- Helper					[755] 
-|  |           +- ktai_helper.test.php	[***] 携帯ヘルパーのテストケース
 |  +- View								[755] 
 |  |  +- Helper							[755] 
 |  |     +- KtaiHelper.php				[644] 携帯ヘルパー
@@ -206,36 +208,45 @@ git checkout -b 0.x-2.x
 
 [設定開始]
 　　↓             Yes
-CakePHP2.0で使う？ --→ 1：CakePHP2.0で使用する場合
-　　｜No                           |
-　　｜←---------------------------+
+CakePHP1.3で使う？ --→ 1：CakePHP1.3で使用する場合 -+
+　　｜No                                             |
+　　↓             Yes                               |
+CakePHP2.xで使う？ --→ 2：CakePHP2.xで使用する場合  |
+　　｜No                           |                 |
+　　｜←---------------------------+-----------------+
 　　↓             Yes
-セッションを使う？ --→ 2-a：セッションを使用する場合
+セッションを使う？ --→ 3-a：セッションを使用する場合
 　　｜No                                 |
 　　｜                      +------------+
 　　↓                      | Yes
 ktaiコンポーネントを使う？ -+
- もしくは                   +-→ 2-b：ktaiコンポーネントを用いる場合
+ もしくは                   +-→ 3-b：ktaiコンポーネントを用いる場合
 自動変換処理を行う？       -+                    |
 　　｜No                                         |
 　　↓                                           |
-2-c：ktaiヘルパーのみを用いる場合                |
+3-c：ktaiヘルパーのみを用いる場合                |
 　　｜                                           |
 　　｜←-----------------------------------------+
 　　↓
 [設定完了]
 
 
-1：CakePHP2.0で使用する場合のCake設定
+1：CakePHP1.3で使用する場合のCake設定
 
-　CakePHP2.0からは、プラグインを使用する際にapp/Config/bootstrap.phpに
+　CakePHP1.3で利用する場合は、app/config内に、
+cake_ktai_library/config/ktai_session.phpをコピーしてください。コピーしないと
+KtaiLibraryは正しく動作しません。
+
+2：CakePHP2.xで使用する場合のCake設定
+
+　CakePHP2.xからは、プラグインを使用する際にapp/Config/bootstrap.phpに
 プラグイン使用を明示的に記述する必要があります。これがないとCakeKtaiLibraryは
 起動できません。
 
 CakePlugin::load('CakeKtaiLibrary');
 
 
-2:Ktai Libraryの設定
+3:Ktai Libraryの設定
 
 　以下は、Ktai Library関連の設定になります。
 　なお、lib3gkを単体で利用することもできます。詳しくはlib3gkのreadmeをご覧
@@ -244,14 +255,14 @@ CakePlugin::load('CakeKtaiLibrary');
 2.xの場合は読み替えてください。
 
 
-2-a：セッションを使用する場合【大変に重要!!】
+3-a：セッションを使用する場合【大変に重要!!】
 
 　CakePHPで携帯サイトを実現するにあたり、セッションを使うための設定が必要に
 なります(携帯でセッション機能を使わない場合は省略することも出来ます)。
 　なお、セッションを使用する場合は、Ktaiコンポーネントが必須となります。
 
 
-2-a-1 : routes.phpへの記述
+3-a-1 : routes.phpへの記述
 
 　namedパラメータのセパレータ文字を変更します。
 　「app/config/routes.php」に、次の記述を「一番最初に」行ってください。
@@ -267,7 +278,7 @@ iMODEにてセッションIDが付加されなくなりますので必ず指定�
 	//↓以下、Router::connect(～)を記述します
 
 
-a-2：ktai_app_controller.phpの適用(もしくは編集)
+3-a-2：ktai_app_controller.phpの適用(もしくは編集)
 
 　添付されているktai_app_controller.phpをappディレクトリにコピーして
 「AppController」の代わりに「KtaiAppController」をextendsするようにします。
@@ -283,7 +294,7 @@ class FoosController extends KtaiAppController {
 }
 
 
-2-a-3：パラメータの追加
+3-a-3：パラメータの追加
 
 　各コントローラもしくはktai_app_controler.php内に、セッション用のパラメータを
 追加します。
@@ -298,7 +309,7 @@ var $ktai = array(
 );
 
 
-2-b：ktaiコンポーネントを用いる場合(ヘルパーの使用は問わない)
+3-b：ktaiコンポーネントを用いる場合(ヘルパーの使用は問わない)
 
 　コンポーネントを用いる場合は、利用するコントローラ内に「ktai」プロパティを
 作成します。
@@ -335,7 +346,7 @@ class HogeController extends KtaiAppController {
 　出来ません。
 
 
-2-c：ktaiヘルパーのみを用いる場合
+3-c：ktaiヘルパーのみを用いる場合
 
 　ヘルパー「のみ」を用いる場合は、コントローラ内でConfigure::write()を用いて
 設定値を受け渡します。
@@ -400,7 +411,9 @@ $ktai->options['output_encoding'] = KTAI_ENCDING_UTF8, 	//出力をUTF-8に変�
 東京都：<?php $ktai->emoji(0xe63e); ?><br>
 
 
-◎設定値詳細
+--------------------------------------------------
+■Ktai Library設定値詳細
+--------------------------------------------------
 
 ライブラリ内の「_params」プロパティ、もしくはcontroller内の「ktai」
 プロパティ、ヘルパーを利用する際の「Configure::write('Ktai', $params);」で設定
