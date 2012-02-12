@@ -99,7 +99,7 @@ git checkout -b 0.x-2.x
    +- controllers						[755] 
    |  +- components						[755] 
    |  |  +- ktai.php					[644] 携帯コンポーネント
-   +- tests								[755] 
+   +- tests								[755] テストコード(*2)
    |  +- cases							[755] 
    |  |  +- components					[755] 
    |  |  +- ktai_component.test.php		[644] 携帯コンポーネントのテストケース
@@ -125,7 +125,7 @@ git checkout -b 0.x-2.x
    |  +- img							[755] 
    |     +- emoticons					[755] 絵文字画像はここに設置します(後述)
    |        +- empty					[***] (ダミー・アップロード不要です)
-   +- ktai_app_controller.php			[644] 携帯用app_controller.php(*)
+   +- ktai_app_controller.php			[644] 携帯用app_controller.php(*1)
    +- app_error.php						[644] 携帯用app_error.php
    +- vendors							[755] 
    |  +- lib3gk							[755] Ktai Libraryコアライブラリ
@@ -157,8 +157,7 @@ git checkout -b 0.x-2.x
 |  +- Controller						[755] 
 |  |  +- Component						[755] 
 |  |  |  +- KtaiComponent.php			[644] 携帯コンポーネント
-|  |  +- KtaiAppController.php			[644] 携帯用AppController.php(*)
-|  |  +- CakeErrorController.php		[644] 携帯用CakeErrorController.php
+|  |  +- KtaiAppController.php			[644] 携帯用AppController.php(*1)
 |  +- View								[755] 
 |  |  +- Helper							[755] 
 |  |     +- KtaiHelper.php				[644] 携帯ヘルパー
@@ -194,8 +193,10 @@ git checkout -b 0.x-2.x
 　なお、ライブラリ単体で利用する場合は、vendors/ecw内のライブラリファイルのみを
 所定のディレクトリにアップロードしてください。その他のファイルは不要です。
 
-(*)セッション関連を使用する場合は、app_controller.phpの代わりにこちらを利用
+(*1)セッション関連を使用する場合は、app_controller.phpの代わりにこちらを利用
 するか、既存app_controller.phpに必要箇所をペーストしてください
+
+(*2)CakePHP2.x用のテストコードは現在パッケージ内に含まれておりません。
 
 
 --------------------------------------------------
