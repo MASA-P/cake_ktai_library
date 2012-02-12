@@ -15,9 +15,10 @@
  * @copyright		Copyright 2009-2012, ECWorks.
  * @link			http://www.ecworks.jp/ ECWorks.
  * @version			0.5.1
- * @lastmodified	$Date: 2012-02-12 03:00:00 +0900 (Sun, 12 Feb 2012) $
+ * @lastmodified	$Date: 2012-02-13 03:00:00 +0900 (Mon, 13 Feb 2012) $
  * @license			http://www.gnu.org/licenses/gpl.html The GNU General Public Licence
  */
+
 App::build(array(
 	'controllers' => array(App::pluginPath('CakeKtaiLibrary').'tests'.DS.'test_app'.DS.'controllers'.DS), 
 	'views' => array(App::pluginPath('CakeKtaiLibrary').'tests'.DS.'test_app'.DS.'views'.DS), 
