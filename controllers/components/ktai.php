@@ -98,6 +98,7 @@ class KtaiComponent extends Object {
 		$this->_lib3gk = Lib3gk::get_instance();
 		$this->_lib3gk->_url_callback = array($this, 'url_callback_func');
 		$this->_lib3gk->_params = array_merge($this->_lib3gk->_params, $this->_options);
+		$this->_options =& $this->_lib3gk->_params;
 		if(isset($controller->ktai)){
 			$this->_lib3gk->_params = array_merge($this->_lib3gk->_params, $controller->ktai);
 			$controller->ktai = &$this->_lib3gk->_params;
